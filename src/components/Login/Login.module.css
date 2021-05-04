@@ -1,0 +1,63 @@
+.block {
+    width: 476px;
+    height: 319px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #EAEAEA;
+    text-align: center;
+}
+
+.head {
+    width: 478px;
+    height: 11px;
+    background-color: #302E2E;
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+    margin: 0;
+}
+
+.logo {
+    width: 81px;
+    height: 33px;
+    text-align: center;
+    margin: 39px auto 25px;
+}
+
+.block input[type="email"],
+.block input[type="password"] {
+    font-size: 14px;
+    margin: 0 auto 21px;
+    padding: 12px 78px 12px 22px;
+    border: 1px solid #979797;
+    outline: none;
+    color: #5C5C5C;
+}
+
+input::-moz-placeholder {
+    color: #B2B2B2;
+}
+
+input::-webkit-input-placeholder {
+    color: #B2B2B2;
+}
+
+.block .button {
+    font-size: 14px;
+    padding: 10px 24px;
+    cursor: pointer;
+    margin-left: 180px;
+    border: 0;
+    background: #302E2E;
+    color: white;
+}
+
+/*.block .buttons input[name="Send"] {*/
+/*    padding: 9px 14px;*/
+/*    font-size: 14px;*/
+/*    float: right;*/
+/*    margin-right: 102px;*/
+/*}*/
