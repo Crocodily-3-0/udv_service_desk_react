@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "../../contexts/AuthContext";
+import React, {useRef, useState} from "react";
+import {Link, useHistory} from "react-router-dom";
+import {useAuth} from "../../contexts/AuthContext";
 
 import styles from "./Login.module.css";
 import UDVLogo from "../../images/logo.svg";
@@ -10,7 +10,7 @@ export default function Login() {
     const [loading, setLoading] = useState(false);
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { login } = useAuth();
+    const {login} = useAuth();
     const history = useHistory();
 
     async function handleSubmit(e) {
@@ -21,7 +21,7 @@ export default function Login() {
             setLoading(true);
             const checkLogin = await login(emailRef.current.value, passwordRef.current.value)
             setLoading(false);
-            if(checkLogin && checkLogin.error) {
+            if (checkLogin && checkLogin.error) {
                 return setError(checkLogin.error);
             }
             history.push('/')

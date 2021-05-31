@@ -10,7 +10,7 @@ export function useAuth() {
     return useContext(AuthContext);
 }
 
-export function AuthProvider({ children }) {
+export function AuthProvider({children}) {
     const [currentUser, setCurrentUser] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -27,26 +27,10 @@ export function AuthProvider({ children }) {
             body: params
         };
 
-        const response = await fetch(API_URL + '/auth/jwt/login', postConfig);
-        const tokenData = await response.json()
-        let token = tokenData.access_token;
+        const response = await fetch(API_URL + '/login', postConfig);
+        const currentUser = await response.json()
 
-        const getConfig = {
-            method: 'GET',
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        }
-
-        const userResponse = await fetch(API_URL + '/me', getConfig)
-        let userData = await userResponse.json();
-
-        let currentUser = {
-            token,
-            userData
-        }
         console.log(currentUser)
-
         setCurrentUser(currentUser);
         cookies.set('currentUser', currentUser);
     }
@@ -60,7 +44,7 @@ export function AuthProvider({ children }) {
     }, [])
 
     const logout = () => {
-        setCurrentUser({});
+        setCurrentUser(null);
         cookies.remove('currentUser')
     }
 
