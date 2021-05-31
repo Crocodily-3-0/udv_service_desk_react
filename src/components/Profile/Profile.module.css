@@ -1,0 +1,28 @@
+.block {
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #EAEAEA;
+    padding: 50px 100px;
+    border-top: solid 11px #302E2E;
+}
+
+.name {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+    font-weight: bolder;
+    color: #989898;
+}
+
+.info {
+    margin-left: 10px;
+    font-weight: normal;
+    color: #464646;
+}

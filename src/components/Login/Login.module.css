@@ -45,19 +45,18 @@ input::-webkit-input-placeholder {
     color: #B2B2B2;
 }
 
-.block .button {
+.button {
     font-size: 14px;
     padding: 10px 24px;
     cursor: pointer;
-    margin-left: 180px;
+    margin-left: 60px;
     border: 0;
     background: #302E2E;
     color: white;
 }
 
-/*.block .buttons input[name="Send"] {*/
-/*    padding: 9px 14px;*/
-/*    font-size: 14px;*/
-/*    float: right;*/
-/*    margin-right: 102px;*/
-/*}*/
+.forgot {
+    color: #00C092;
+    cursor: pointer;
+}
+

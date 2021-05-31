@@ -1,32 +1,31 @@
-import React, {Component} from "react";
-import AuthService from "../../services/auth.service";
+import React, { useState } from "react";
+import { useAuth } from "../../contexts/AuthContext";
 
-export default class Profile extends Component {
-    constructor(props) {
-        super(props)
+import styles from "./Profile.module.css";
 
-        this.state = {
-            currentUser: AuthService.getCurrentUser()
-        };
+export default function Profile() {
+    const [error, setError] = useState('');
+    const { currentUser } = useAuth();
+
+    function handleLogout() {
+
     }
 
-    render() {
-        const {currentUser} = this.state;
-
-        return (
-            <div>
-                <h3>Profile</h3>
-                <p>{currentUser.email}</p>
-                <p>{currentUser.id}</p>
-                <p>{currentUser.name}</p>
-                <p>{currentUser.surname}</p>
-                <p>{currentUser.patronymic}</p>
-                {/*<p>*/}
-                {/*    Token:{' '}*/}
-                {/*    {currentUser.accessToken.substring(0, 20)}{' '}*/}
-                {/*    {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}*/}
-                {/*</p>*/}
+    return(
+        <div className={styles.block}>
+            <div className={styles.name}>
+                {currentUser.userData.surname}
+                {currentUser.userData.name}
+                {currentUser.userData.patronymic}
             </div>
-        )
-    }
+            <p>ID: <span className={styles.info}>{currentUser.userData.id}</span></p>
+            <p>Почта: <span className={styles.info}>{currentUser.userData.email}</span></p>
+            {currentUser.userData.is_superuser ? <p>Роль: <span className={styles.info}>разработчик</span></p> : null}
+            {currentUser.userData.is_owner}
+            <p>Роль: <span className={styles.info}>владелец организации</span></p>
+            {currentUser.userData.is_active}
+            <p>Статус: <span className={styles.info}>активный</span></p>
+            <button onClick={handleLogout}>Выйти</button>
+        </div>
+    )
 }

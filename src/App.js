@@ -1,52 +1,22 @@
-import React, {Component} from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import './App.css';
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
-import AuthService from "./services/auth.service";
+import { AuthProvider } from "./contexts/AuthContext";
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            currentUser: undefined
-        }
-    }
-
-    componentDidMount() {
-        const user = AuthService.getCurrentUser();
-
-        if (user) {
-            this.setState({
-                currentUser: user
-            });
-        }
-    }
-
-    render() {
-        const {currentUser} = this.state;
-
-        return (
-            <div>
-                {currentUser ? (
-                    <Link to={'/profile'}>
-                        {currentUser.email}
-                    </Link>
-                ) : (
-                    <Link to={'/login'}>
-                        Login
-                    </Link>
-                )}
-
+function App() {
+    return(
+        <AuthProvider>
+            <Router>
                 <Switch>
-                    <Route exact path='/login' component={Login}/>
-                    <Route exact path='/profile' component={Profile}/>
+                    <Route exact path="/" component={Profile} />
+                    <Route path="/login" component={Login} />
                 </Switch>
-            </div>
-        );
-    }
+            </Router>
+        </AuthProvider>
+    )
 }
 
 export default App;
