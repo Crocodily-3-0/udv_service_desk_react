@@ -55,7 +55,7 @@ export function AuthProvider({children}) {
         if (user.is_superuser) {
             return "разработчик";
         } else if (user.is_owner) {
-            return "владелец личного кабинета заказчика";
+            return "владелец";
         } else {
             return "представитель заказчика";
         }

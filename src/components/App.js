@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom
 import './App.css';
 
 import Login from "./Login/Login";
+import ForgotPassword from "./ForgotPassword/ForgotPassword";
 
 import PrivateRoute from "./PrivateRoute";
 import Reports from "./Reports/Reports";
@@ -34,6 +35,8 @@ function App() {
                     <PrivateRoute path='/dictionaries' component={Dicts}/>
 
                     <Route path="/login" component={Login}/>
+                    <Route path="/reset_password" component={ForgotPassword}/>
+
                     <Redirect from="/" to="/login" />
 
                     <Route path="*" component={NotFound} />
