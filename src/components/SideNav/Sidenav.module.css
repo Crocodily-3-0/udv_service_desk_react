@@ -1,4 +1,4 @@
-.main{
+.main {
     width: 100px;
     height: 100vh;
     background: #302E2E;
@@ -6,30 +6,38 @@
     grid-row: span 2;
 }
 
-.logo{
+.logo {
     width: 72px;
     height: 28px;
     margin-bottom: 49px;
 }
 
-.main ul li{
+.main ul li {
     margin-bottom: 38px;
 }
 
-.appeal{
-    padding:10px;
+.appeal,
+.staff,
+.companies,
+.stat,
+.dict,
+.settings {
+    padding: 10px;
     margin: -10px 0;
-    /*background: #535353;*/
 }
 
-.settings, .dicts{
-    padding-top: 56px;
+.stat {
+    margin: 36px 0 -10px 0;
 }
 
-.stat{
-    padding-top: 46px;
+.dict {
+    margin: 46px 0;
 }
 
-.active{
+.settings {
+    margin: 46px 0;
+}
+
+.active {
     background: #535353;
 }

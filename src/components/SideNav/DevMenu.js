@@ -1,4 +1,5 @@
 import React from "react";
+import {NavLink, useLocation} from "react-router-dom";
 
 import styles from "../SideNav/Sidenav.module.css"
 
@@ -9,9 +10,14 @@ import companies from "../../images/companies.svg";
 import stat from "../../images/stat.svg";
 import dict from "../../images/dicts.svg";
 
-import {NavLink} from "react-router-dom";
-
 export default function DevMenu() {
+    const location = useLocation();
+    const {pathname} = location;
+    const splitLocation = pathname.split("/");
+
+    function getClassName(firstStyle, page) {
+        return `${firstStyle} ${splitLocation[1] === page ? styles.active : ''}`;
+    }
 
     return (
         <div>
@@ -22,28 +28,38 @@ export default function DevMenu() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/reports' activeClassName={styles.active}>
-                        <img className={styles.appeal} src={reports} alt="appeal"/>
+                    <NavLink to='/reports'>
+                        <img className={getClassName(styles.appeal, "reports")}
+                             src={reports}
+                             alt="appeal"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/developers' activeClassName={styles.active}>
-                        <img className={styles.staff} src={staff} alt="staff"/>
+                    <NavLink to='/developers'>
+                        <img className={getClassName(styles.staff, "developers")}
+                             src={staff}
+                             alt="staff"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/companies' activeClassName={styles.active}>
-                        <img className={styles.companies} src={companies} alt="companies"/>
+                    <NavLink to='/companies'>
+                        <img className={getClassName(styles.companies, "companies")}
+                             src={companies}
+                             alt="companies"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/stats' activeClassName={styles.active}>
-                        <img className={styles.stat} src={stat} alt="stat"/>
+                    <NavLink to='/stats'>
+                        <img className={getClassName(styles.stat, "stats")}
+                             src={stat}
+                             alt="stat"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/dictionaries' activeClassName={styles.active}>
-                        <img className={styles.dicts} src={dict} alt="dicts"/>
+                    <NavLink to='/dictionaries'>
+                        <img className={getClassName(styles.dict, "dictionaries")}
+                             src={dict}
+                             alt="dict"/>
                     </NavLink>
                 </li>
             </ul>

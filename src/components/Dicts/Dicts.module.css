@@ -5,11 +5,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body{
+body {
     background: #F5F5F5;
 }
 
-.navigation{
+.navigation {
     display: grid;
     grid-template-areas:"main navbar"
                         "main content";
@@ -18,7 +18,7 @@ body{
     text-align: center;
 }
 
-.content{
+.content {
     display: grid;
     grid-template: 35px 26px 1fr 85px / 200px 62px 180px 48.3% 2.6% 21.1% 3%;
     padding: 55px 0 0 75px;

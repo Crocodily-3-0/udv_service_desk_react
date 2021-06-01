@@ -34,7 +34,7 @@ export default function Profile() {
     return (
         <div className={styles.navigation}>
             <SideNav/>
-            <HeaderNav/>
+            <HeaderNav pageName="Личный кабинет"/>
             {error && alert(error)}
             <div className={styles.content}>
                 <div className={styles.block}>

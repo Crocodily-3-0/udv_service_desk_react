@@ -24,8 +24,6 @@ function App() {
         <AuthProvider>
             <Router>
                 <Switch>
-                    <Route path="/login" component={Login}/>
-
                     <PrivateRoute path='/reports' component={Reports}/>
                     <PrivateRoute path='/profile' component={Profile}/>
                     <PrivateRoute path='/developers' component={Developers}/>
@@ -35,6 +33,7 @@ function App() {
                     <PrivateRoute path='/stats' component={Stat}/>
                     <PrivateRoute path='/dictionaries' component={Dicts}/>
 
+                    <Route path="/login" component={Login}/>
                     <Redirect from="/" to="/login" />
 
                     <Route path="*" component={NotFound} />

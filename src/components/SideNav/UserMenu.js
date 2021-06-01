@@ -1,4 +1,5 @@
 import React from "react";
+import {NavLink, useLocation} from "react-router-dom";
 
 import styles from "../SideNav/Sidenav.module.css"
 
@@ -7,30 +8,44 @@ import reports from "../../images/appeal.svg";
 import staff from "../../images/staff.svg";
 import settings from "../../images/settings.svg";
 
-import {NavLink} from "react-router-dom";
-
 export default function UserMenu() {
+    const location = useLocation();
+    const {pathname} = location;
+    const splitLocation = pathname.split("/");
+
+    function getClassName(firstStyle, page) {
+        return `${firstStyle} ${splitLocation[1] === page ? styles.active : ''}`;
+    }
+
     return (
         <div>
             <ul>
                 <li>
                     <NavLink to='/reports'>
-                        <img className={styles.logo} src={logo} alt="udv"/>
+                        <img className={styles.logo}
+                             src={logo}
+                             alt="udv"/>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/reports'>
-                        <img className={styles.appeal} src={reports} alt="appeal"/>
+                        <img className={getClassName(styles.appeal, "reports")}
+                             src={reports}
+                             alt="appeal"/>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/employees'>
-                        <img className={styles.staff} src={staff} alt="staff"/>
+                        <img className={getClassName(styles.staff, "employees")}
+                             src={staff}
+                             alt="staff"/>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/company_info'>
-                        <img className={styles.settings} src={settings} alt="settings"/>
+                        <img className={getClassName(styles.settings, "company_info")}
+                             src={settings}
+                             alt="settings"/>
                     </NavLink>
                 </li>
             </ul>
