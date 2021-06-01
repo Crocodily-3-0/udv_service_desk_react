@@ -11,7 +11,7 @@ export function useAuth() {
 }
 
 export function AuthProvider({children}) {
-    const [currentUser, setCurrentUser] = useState({});
+    const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const login = async (email, password) => {
@@ -27,10 +27,13 @@ export function AuthProvider({children}) {
             body: params
         };
 
-        const response = await fetch(API_URL + '/login', postConfig);
+        const response = await fetch(API_URL + '/auth/jwt/login', postConfig);
         const currentUser = await response.json()
 
-        console.log(currentUser)
+        if (!response.ok) {
+            return { error: currentUser.error }
+        }
+
         setCurrentUser(currentUser);
         cookies.set('currentUser', currentUser);
     }
@@ -48,10 +51,21 @@ export function AuthProvider({children}) {
         cookies.remove('currentUser')
     }
 
+    const userRole = (user) => {
+        if (user.is_superuser) {
+            return "разработчик";
+        } else if (user.is_owner) {
+            return "владелец личного кабинета заказчика";
+        } else {
+            return "представитель заказчика";
+        }
+    }
+
     const value = {
         currentUser,
         login,
-        logout
+        logout,
+        userRole
     }
 
     return (

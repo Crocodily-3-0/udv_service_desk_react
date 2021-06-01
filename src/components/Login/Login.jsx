@@ -24,7 +24,7 @@ export default function Login() {
             if (checkLogin && checkLogin.error) {
                 return setError(checkLogin.error);
             }
-            history.push('/')
+            history.push('/reports')
         } catch (error) {
             setError('Ошибка при входе в систему')
         }
@@ -32,6 +32,7 @@ export default function Login() {
 
     return (
         <div>
+            {error && alert(error)}
             <form className={styles.block} onSubmit={handleSubmit}>
                 <div className={styles.head}/>
                 <img className={styles.logo} src={UDVLogo} alt="udv"/>

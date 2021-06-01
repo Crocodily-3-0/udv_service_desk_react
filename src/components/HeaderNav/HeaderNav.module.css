@@ -1,0 +1,34 @@
+.navbar{
+    width: 100%;
+    height: 80px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding:17px 47px 0 75px;
+    border: 1px solid #EAEAEA;
+}
+
+.page{
+    font-size: 18px;
+    color: #464646;
+    padding-top: 12px;
+}
+
+.rightMenu ul{
+    display: flex;
+    align-items: center;
+}
+
+.rightMenu ul li{
+    list-style-type: none;
+    padding-left: 19px;
+}
+
+.logout {
+    cursor: pointer;
+}
+
+.ava{
+    width: 45px;
+    height: 45px;
+}
