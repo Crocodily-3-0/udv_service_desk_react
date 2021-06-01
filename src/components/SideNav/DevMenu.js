@@ -22,27 +22,27 @@ export default function DevMenu() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/reports'>
+                    <NavLink to='/reports' activeClassName={styles.active}>
                         <img className={styles.appeal} src={reports} alt="appeal"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/developers'>
+                    <NavLink to='/developers' activeClassName={styles.active}>
                         <img className={styles.staff} src={staff} alt="staff"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/companies'>
+                    <NavLink to='/companies' activeClassName={styles.active}>
                         <img className={styles.companies} src={companies} alt="companies"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/stats'>
+                    <NavLink to='/stats' activeClassName={styles.active}>
                         <img className={styles.stat} src={stat} alt="stat"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/dictionaries'>
+                    <NavLink to='/dictionaries' activeClassName={styles.active}>
                         <img className={styles.dicts} src={dict} alt="dicts"/>
                     </NavLink>
                 </li>

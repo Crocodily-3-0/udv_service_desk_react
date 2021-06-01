@@ -4,7 +4,6 @@ import {useHistory} from "react-router-dom";
 
 import styles from "../HeaderNav/HeaderNav.module.css"
 
-import avatar from "../../images/avatar.svg";
 import exit from "../../images/exit.svg";
 
 import {Link} from "react-router-dom";

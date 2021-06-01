@@ -19,6 +19,7 @@
 .appeal{
     padding:10px;
     margin: -10px 0;
+    /*background: #535353;*/
 }
 
 .settings, .dicts{
@@ -29,6 +30,6 @@
     padding-top: 46px;
 }
 
-/*.active{*/
-/*    background: #535353;*/
-/*}*/
+.active{
+    background: #535353;
+}

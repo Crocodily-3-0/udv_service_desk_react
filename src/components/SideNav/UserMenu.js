@@ -5,9 +5,7 @@ import styles from "../SideNav/Sidenav.module.css"
 import logo from "../../images/logo.svg";
 import reports from "../../images/appeal.svg";
 import staff from "../../images/staff.svg";
-import companies from "../../images/companies.svg";
-import stat from "../../images/stat.svg";
-import dict from "../../images/dicts.svg";
+import settings from "../../images/settings.svg";
 
 import {NavLink} from "react-router-dom";
 
@@ -32,7 +30,7 @@ export default function UserMenu() {
                 </li>
                 <li>
                     <NavLink to='/company_info'>
-                        <img className={styles.settings} src={dict} alt="settings"/>
+                        <img className={styles.settings} src={settings} alt="settings"/>
                     </NavLink>
                 </li>
             </ul>

@@ -15,6 +15,8 @@ import CompanyInfo from "./ComanyInfo/CompanyInfo";
 import Stat from "./Stat/Stat"
 import Dicts from "./Dicts/Dicts";
 
+import NotFound from "./NotFound";
+
 import {AuthProvider} from "../contexts/AuthContext";
 
 function App() {
@@ -32,6 +34,10 @@ function App() {
                     <PrivateRoute path='/company_info' component={CompanyInfo}/>
                     <PrivateRoute path='/stats' component={Stat}/>
                     <PrivateRoute path='/dictionaries' component={Dicts}/>
+
+                    <Redirect from="/" to="/login" />
+
+                    <Route path="*" component={NotFound} />
                 </Switch>
             </Router>
         </AuthProvider>
