@@ -17,11 +17,13 @@
 .rightMenu ul {
     display: flex;
     align-items: center;
+    margin-right: 40px;
 }
 
 .rightMenu ul li {
     list-style-type: none;
-    padding-left: 19px;
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
 .logout {
@@ -31,4 +33,8 @@
 .ava {
     width: 45px;
     height: 45px;
+}
+
+.userName {
+    font-size: 18px;
 }

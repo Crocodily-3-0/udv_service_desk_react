@@ -32,7 +32,7 @@ export default function HeaderNav(props) {
                     <li>
                         <Link to='/profile'>
                             {/*<img className={styles.ava} src={avatar} alt="avatar"/>*/}
-                            <div>{currentUser.user.name} {currentUser.user.surname}</div>
+                            <div className={styles.userName}>{currentUser.user.name} {currentUser.user.surname}</div>
                         </Link>
                     </li>
                     <li>

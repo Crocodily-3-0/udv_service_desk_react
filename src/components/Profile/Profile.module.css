@@ -81,6 +81,13 @@ a img {
     cursor: pointer;
 }
 
+.edit {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 3px 20px;
+}
+
 .status{
     width: 130px;
     height: 23px;
@@ -123,6 +130,26 @@ a img {
     width: 131px;
 }
 
+.control{
+    padding-left: 30px;
+    margin-top: 20px;
+}
+
+.control h1{
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 18px;
+}
+
+.first{
+    border: 0;
+    font-size: 12px;
+    color: white;
+    background: #302E2E;
+    padding:8px 17.5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
 
 /*.block {*/
 /*    width: auto;*/
