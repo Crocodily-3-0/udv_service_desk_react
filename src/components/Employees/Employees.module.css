@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: #F5F5F5;
+}
+
+.navigation{
+    display: grid;
+    grid-template-areas:"main navbar"
+                        "main content";
+    grid-template: 80px 1fr / 100px 1fr;
+    grid-auto-rows: auto;
+    text-align: center;
+}
+
+.content{
+    display: grid;
+    grid-template: 35px 26px 1fr 85px / 200px 62px 180px 48.3% 2.6% 21.1% 3%;
+    padding: 55px 0 0 75px;
+}

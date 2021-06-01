@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 
 export default function HeaderNav(props) {
     const [error, setError] = useState('');
-    const {logout} = useAuth();
+    const {currentUser, logout} = useAuth();
     const history = useHistory();
 
     async function handleLogout() {
@@ -32,7 +32,8 @@ export default function HeaderNav(props) {
                 <ul>
                     <li>
                         <Link to='/profile'>
-                            <img className={styles.ava} src={avatar} alt="avatar"/>
+                            {/*<img className={styles.ava} src={avatar} alt="avatar"/>*/}
+                            <div>{currentUser.user.name} {currentUser.user.surname}</div>
                         </Link>
                     </li>
                     <li>

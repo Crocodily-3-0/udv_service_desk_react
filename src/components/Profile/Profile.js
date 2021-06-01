@@ -3,6 +3,7 @@ import {useAuth} from "../../contexts/AuthContext";
 import {useHistory} from "react-router-dom";
 
 import styles from "./Profile.module.css";
+
 import SideNav from "../SideNav/SideNav";
 import HeaderNav from "../HeaderNav/HeaderNav";
 
