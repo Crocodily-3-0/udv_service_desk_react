@@ -4,7 +4,6 @@ import {Link, useHistory} from "react-router-dom";
 
 import styles from "./Profile.module.css";
 
-import arrow from "../../images/arrow.svg"
 import edit from "../../images/edit.svg"
 
 import SideNav from "../SideNav/SideNav";
@@ -64,7 +63,7 @@ export default function Profile() {
                             {userRole(currentUser.user) !== "разработчик" ?
                                 <tr>
                                     <td className={styles.start}>Лицензия:</td>
-                                    <td>Пока что нет</td>
+                                    <td>№1453231</td>
                                 </tr> :
                                 null
                             }
@@ -77,6 +76,61 @@ export default function Profile() {
                         </div>
                     </div>
                 </div>
+                {userRole(currentUser.user) !== "разработчик" ?
+                    <div className={styles.organization}>
+                        <div className={styles.user}>
+                            <div className={styles.name}>
+                                <div className={styles.nametop}>
+                                    <h1>ООО "Крокодилы"</h1>
+                                </div>
+                                <div className={`${styles.status} ${styles.acting}`}>Действующая</div>
+                            </div>
+                        </div>
+                        <div className={styles.personalInfo}>
+                            <table>
+                                <tr>
+                                    <td className={styles.start}><p>Владелец:</p></td>
+                                    <td className={styles.otvetsvenni}>
+                                        <p>Кочергин Константин</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td className={styles.start}><p>Лицензия:</p></td>
+                                    <td className={styles.license}>
+                                        <p className={styles.tdText}>№1453231</p>
+                                        <p className={styles.status}>DATAPK</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className={`${styles.start} ${styles.dop}`}><p>Пользователи:</p></td>
+                                    <td><p>14/25</p></td>
+                                </tr>
+                                <tr>
+                                    <td className={`${styles.start} ${styles.dop}`}><p>Истекает:</p></td>
+                                    <td><p>11 января 2022</p></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td className={styles.start}><p>Лицензия:</p></td>
+                                    <td className={styles.license}>
+                                        <p className={styles.tdText}>№1453231</p>
+                                        <p className={styles.status}>DATAPK</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className={`${styles.start} ${styles.dop}`}><p>Пользователи:</p></td>
+                                    <td><p>14/25</p></td>
+                                </tr>
+                                <tr>
+                                    <td className={`${styles.start} ${styles.dop}`}><p>Истекает:</p></td>
+                                    <td><p>11 января 2022</p></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div> : null}
             </div>
         </div>
     )

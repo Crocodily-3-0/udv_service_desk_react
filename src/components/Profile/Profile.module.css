@@ -56,7 +56,6 @@ a img {
 }
 
 .name {
-    padding-left: 17px;
     float: left;
     color: #464646;
 }
@@ -88,7 +87,7 @@ a img {
     margin: 3px 20px;
 }
 
-.status{
+.status {
     width: 130px;
     height: 23px;
     padding: 4px;
@@ -118,64 +117,127 @@ a img {
     width: 151px;
 }
 
-.acting{
+.acting {
     background: #DAFAD8;
     color: #8FC274;
     width: 115px;
 }
 
-.noacting{
+.noacting {
     background: #FFD2D2;
     color: #FC5F5F;
     width: 131px;
 }
 
-.control{
+.control {
     padding-left: 30px;
     margin-top: 20px;
 }
 
-.control h1{
+.control h1 {
     font-size: 18px;
     font-weight: 500;
     padding-bottom: 18px;
 }
 
-.first{
+.first {
     border: 0;
     font-size: 12px;
     color: white;
     background: #302E2E;
-    padding:8px 17.5px;
+    padding: 8px 17.5px;
     margin-bottom: 15px;
     cursor: pointer;
 }
 
-/*.block {*/
-/*    width: auto;*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    left: 50%;*/
-/*    transform: translate(-50%, -50%);*/
-/*    background: white;*/
-/*    border: 1px solid #EAEAEA;*/
-/*    padding: 50px 100px;*/
-/*    border-top: solid 11px #302E2E;*/
+.organization {
+    height: 421px;
+    background: white;
+    border: 1px solid #EAEAEA;
+    padding: 38px 40px;
+    text-align: left;
+    color: #464646;
+    grid-row: 2/4;
+    grid-column: 4;
+    font-size: 14px;
+}
+
+.organization p {
+    font-size: 14px;
+}
+
+.organization .name .status {
+    margin-top: 12px;
+    background: #DAFAD8;
+    color: #8FC274;
+    width: 115px;
+}
+
+.organization .license .status {
+    font-size: 12px;
+}
+
+.organization .personalInfo {
+    padding: 15px 0 0 0;
+}
+
+.organization .personalInfo table {
+    border-spacing: 9px;
+}
+
+.organization .personalInfo table .status {
+    width: 74px;
+    padding-top: 6px;
+    margin: 9px 10px 0 0;
+}
+
+/*.organization .otvetsvenni {*/
+/*    padding-top: 4px;*/
 /*}*/
 
-/*.name {*/
-/*    font-size: 35px;*/
-/*    font-weight: bold;*/
-/*}*/
+.organization .otvetsvenni, .license {
+    display: flex;
+}
 
-/*p {*/
-/*    font-size: 16px;*/
-/*    font-weight: bolder;*/
-/*    color: #989898;*/
-/*}*/
+.organization .otvetsvenni p {
+    padding: 0 0 0 2px;
+}
 
-/*.info {*/
-/*    margin-left: 10px;*/
-/*    font-weight: normal;*/
-/*    color: #464646;*/
-/*}*/
+.organization .tdText {
+    padding: 8px 12px 0 0;
+}
+
+.organization .user {
+    color: #464646;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.organization .ava img {
+    width: 55px;
+    height: 55px;
+}
+
+.organization .start {
+    color: #A6A6A6;
+    font-weight: 500;
+    width: 95px;
+}
+
+.organization .dop {
+    font-weight: normal;
+}
+
+.organization .name {
+    float: left;
+    color: #464646;
+}
+
+.organization .name h1 {
+    font-weight: bold;
+    font-size: 18px;
+    grid-row: 1;
+    grid-column: 2;
+    padding-right: -20px;
+}
