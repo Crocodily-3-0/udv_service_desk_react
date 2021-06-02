@@ -1,13 +1,15 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
+import {AuthProvider} from "../contexts/AuthContext";
 
 import './App.css';
-
 import Login from "./Login/Login";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
 
 import PrivateRoute from "./PrivateRoute";
+
 import Reports from "./Reports/Reports";
+import Report from "./Report/Report";
 import Profile from "./Profile/Profile";
 import Developers from "./Developers/Developers";
 import Employees from "./Employees/Employees"
@@ -17,8 +19,6 @@ import Stat from "./Stat/Stat"
 import Dicts from "./Dicts/Dicts";
 
 import NotFound from "./NotFound";
-
-import {AuthProvider} from "../contexts/AuthContext";
 
 function App() {
     return (
@@ -33,11 +33,10 @@ function App() {
                     <PrivateRoute path='/company_info' component={CompanyInfo}/>
                     <PrivateRoute path='/stats' component={Stat}/>
                     <PrivateRoute path='/dictionaries' component={Dicts}/>
+                    <PrivateRoute path='/report' component={Report}/>
 
                     <Route path="/login" component={Login}/>
                     <Route path="/reset_password" component={ForgotPassword}/>
-
-                    <Redirect from="/" to="/login" />
 
                     <Route path="*" component={NotFound} />
                 </Switch>

@@ -172,7 +172,7 @@ input::-webkit-input-placeholder {
     display: inline-block;
     grid-column: 3 / 4;
     grid-row: 1;
-    width: 200px;
+    width: 210px;
     cursor: pointer;
     border: 0;
     background: #302E2E;

@@ -173,28 +173,41 @@ input::-webkit-input-placeholder {
     /*background-image: url(../images/stargold.svg);*/
 }
 
-.navigation .content{
+.navigation .content {
     grid-template: 35px 26px 1fr 85px / 200px 1fr 123px;
 }
 
-.f1Column{
+.f1Column {
     min-width: 211px;
 }
 
-.f1Column p{
+.f1Column p {
     display: inline-block;
 }
 
-.f2Column{
+.f2Column {
     min-width: 147px;
 }
 
-.f2Column img{
+.f2Column img {
     height: 16px;
     width: 16px;
     margin-right: 2px;
 }
 
-.content .table{
-    grid-column: 1/3;
+.content .table {
+    width: 1480px;
+}
+
+.addButton {
+    display: inline-block;
+    grid-column: 2;
+    grid-row: 1;
+    width: 180px;
+    cursor: pointer;
+    border: 0;
+    background: #302E2E;
+    color: white;
+    font-size: 14px;
+    margin-left: 62px;
 }
