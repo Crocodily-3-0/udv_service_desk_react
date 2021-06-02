@@ -25,9 +25,10 @@ export default function Reports() {
                 <form className={styles.search}>
                     <input name="search" placeholder="Поиск" type="search"/>
                 </form>
-                <button className={styles.addButton} type="submit" name="report">
-                    + Новое обращение
-                </button>
+                {!currentUser.user.is_superuser ?
+                    <button className={styles.addButton} type="submit" name="report">
+                        + Новое обращение
+                    </button> : null}
                 <table className={styles.table}>
                     <tr className={styles.head}>
                         <th className={styles.emptyColumn}/>
@@ -43,7 +44,7 @@ export default function Reports() {
                         <th className={styles.seColumn}>Дата создания</th>
                     </tr>
 
-                    <tr className={styles.report1} onClick={()=> handleRowClick()}>
+                    <tr className={styles.report1} onClick={() => handleRowClick()}>
                         <td className={styles.emptyColumn}/>
                         <td className={styles.fColumn}>
                             <p>Иванов Иван</p>
